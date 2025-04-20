@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GUESS THE COLOR</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="theme-switch">
+        <label class="toggle">
+          <input type="checkbox" id="toggleSwitch" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <h3>Guess The Hex Color</h3>
+
+      <button class="newGameBtn">New Game</button>
+    </nav>
+
+    <main>
+      <p class="question">Hex &nbsp; <span class="colorCode">#000000</span></p>
+
+      <div class="options">
+        <div class="opt1"></div>
+        <div class="opt2"></div>
+        <div class="opt3"></div>
+        <div class="opt4"></div>
+        <div class="opt5"></div>
+      </div>
+
+      <button class="nextBtn">Start</button>
+      <div class="score-board">
+        <div>
+          <p>Score -</p>
+          <p class="score">0</p>
+        </div>
+        <div>
+          <p>Attempts -</p>
+          <p class="attempt">0</p>
+        </div>
+      </div>
+
+      <div class="result">winner</div>
+
+      <button class="newGameBtn-mob">New Game</button>
+
+      <button id="toggleBtn">LIGHT MODE</button>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
