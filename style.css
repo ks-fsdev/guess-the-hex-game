@@ -101,6 +101,25 @@ main {
   display: none;
 }
 
+.help-btn {
+  position: absolute;
+  padding: 10px;
+  border-radius: 10px;
+  bottom: 30px;
+  right: clamp(20px, 4vw, 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: #46457d;
+  border: 2px solid #434343;
+  color: white;
+}
+
+.help-btn span {
+  display: block;
+}
+
 .newGameBtn-mob {
   display: none;
   background-color: #46457d;
@@ -207,7 +226,8 @@ input:checked + .slider::before {
 
 .dark-theme .newGameBtn,
 .dark-theme .nextBtn,
-.dark-theme .newGameBtn-mob {
+.dark-theme .newGameBtn-mob,
+.dark-theme .help-btn {
   background-color: #8a89c0;
   color: rgb(0, 0, 0);
   font-weight: 700;
@@ -287,5 +307,27 @@ input:checked + .slider::before {
     margin-top: 50px;
     padding: 20px;
     font-size: 3vh;
+  }
+
+  .help-btn {
+    height: 50px;
+    width: 50px;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    color: black;
+  }
+
+  .help-btn span {
+    display: none;
+  }
+
+  .dark-theme .help-btn {
+    background-color: #2b2b34 !important;
+    color: white;
+    font-weight: 700;
+    box-shadow: none !important;
+    border: none !important;
   }
 }

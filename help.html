@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GUESS THE COLOR- Help</title>
+    <link rel="stylesheet" href="help.css" />
+
+    <!-- bootstrap link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap link -->
+  </head>
+  <body>
+    <h1>FAQs</h1>
+    <div class="faq-container">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="false"
+              aria-controls="collapseOne"
+            >
+              What is a Hex Color Code?
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              A Hex color code is a six-digit code used in HTML and CSS to
+              represent colors. It starts with a <code>#</code> followed by
+              numbers and letters, like <code>#FF5733</code>. Each pair
+              represents Red, Green, and Blue (RGB) intensity values. The color
+              can
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              How Hex Colors Work?
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              Hex codes are based on the hexadecimal number system (0-9 and
+              A-F). Here's how it works:
+              <ul>
+                <li>The first two digits represent <strong>Red</strong></li>
+                <li>The next two represent <strong>Green</strong></li>
+                <li>The last two represent <strong>Blue</strong></li>
+              </ul>
+
+              For example <code>#FF0000</code> is pure red while #00FF00 is
+              green and <code>#0000FF</code> is blue. A color like #1A0000 has
+              very little red while <code>#A10000</code> has a much stronger red
+              component. Switching 1A to A1 increases the red intensity from 26
+              to 161. The arrangement of these numbers and letters directly
+              affects the shade and brightness of the color.
+
+              <div class="examples">
+                <div class="ex11">
+                  <div class="color" id="col1"></div>
+                  <p><code>#003300</code></p>
+                </div>
+                <div class="ex12">
+                  <div class="color" id="col2"></div>
+                  <p><code>#008800</code></p>
+                </div>
+                <div class="ex13">
+                  <div class="color" id="col3"></div>
+                  <p><code>#00ff00</code></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              How the Game Works?
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              You’ll be shown a Hex color code like <code>#3498db</code>, and
+              your goal is to guess which color box matches this code. Click on
+              the box you think is correct. Each round:
+              <ul>
+                <li>One correct option, four decoys</li>
+                <li>Click "Start" to begin</li>
+                <li>Click "Next" to move to the next color</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              How the Scoreboard Works?
+            </button>
+          </h2>
+          <div
+            id="collapseFour"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              The scoreboard tracks:
+              <ul>
+                <li>
+                  <strong>Score</strong> – Increases by 1 for each correct guess
+                </li>
+                <li>
+                  <strong>Attempts</strong> – Increases by 1 every time you
+                  click an option
+                </li>
+              </ul>
+              Try to get the highest score with the fewest attempts!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html"><button class="close-btn">CLose</button></a>
+
+    <!-- bootstrap link -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+    <!-- bootstrap link -->
+    <script src="script.js"></script>
+  </body>
+</html>

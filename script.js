@@ -7,6 +7,7 @@ let score = 0;
 let attempt = 0;
 let userWin;
 let userLose;
+let lightMode = true;
 
 //extracting
 const newHex = document.querySelector(".colorCode");
@@ -18,6 +19,7 @@ const scoreText = document.querySelector(".score");
 const attemptText = document.querySelector(".attempt");
 const result = document.querySelector(".result");
 const mobResetGameBtn = document.querySelector(".newGameBtn-mob");
+const toggleBtn = document.getElementById("toggleBtn");
 
 //extrtacting options div
 const opt1 = document.querySelector(".opt1");
@@ -28,6 +30,64 @@ const opt5 = document.querySelector(".opt5");
 
 //creating an array for options div to choose at random
 const options = [opt1, opt2, opt3, opt4, opt5];
+
+//constant theme applyer
+
+const applyTheme = (isLight) => {
+  lightMode = isLight;
+
+  //set body acc to theme
+  document.body.classList.toggle("dark-theme", !isLight);
+
+  // Sync toggle switch
+  toggleSwitch.checked = !isLight;
+
+  // Sync toggle button state and text
+  toggleBtn.classList.toggle("active", !isLight);
+  toggleBtn.textContent = isLight ? "LIGHT MODE" : "DARK MODE";
+
+  // (Optional) Save theme to localStorage
+  localStorage.setItem("theme", isLight ? "light" : "dark");
+};
+
+// ✅ On load: set theme from saved preference
+window.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("theme");
+  if (saved) applyTheme(saved === "light");
+});
+
+// ✅ Toggle switch event
+toggleSwitch.addEventListener("change", () => {
+  applyTheme(!toggleSwitch.checked);
+});
+
+// ✅ Button event
+toggleBtn.addEventListener("click", () => {
+  applyTheme(!lightMode);
+});
+
+// ✅ Result display (your existing function)
+const resultDisplay = () => {
+  result.style.display = "block";
+  const isDark = document.body.classList.contains("dark-theme");
+
+  if (userWin) {
+    result.innerText = "You Won!";
+    result.style.color = isDark ? "#00ff00" : "#0B642C";
+  } else if (userLose) {
+    result.innerText = "You Lose";
+    result.style.color = isDark ? "#ff0000" : "#6c1111";
+  }
+
+  result.style.backgroundColor = isDark ? "#2b2b34" : "#f9eccc";
+};
+
+//added js
+document.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  const isDark = savedTheme === "dark";
+  document.body.classList.toggle("dark-theme", isDark);
+});
 
 //creating random hex
 const randomHex = () => {
@@ -70,13 +130,6 @@ newGameBtn.addEventListener("click", () => {
 mobResetGameBtn.addEventListener("click", () => {
   reset();
   fullReset();
-});
-
-//background toogle
-const toggleSwitch = document.getElementById("toggleSwitch");
-
-toggleSwitch.addEventListener("change", () => {
-  document.body.classList.toggle("dark-theme");
 });
 
 //enable disble btn function
@@ -195,29 +248,3 @@ const getContrastColor = (hex) => {
   let luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
   return luminance > 0.5 ? "#000000" : "#FFFFFF";
 };
-
-const resultDisplay = () => {
-  result.style.display = "block";
-
-  // Check if dark theme is active
-  const isDark = document.body.classList.contains("dark-theme");
-  if (userWin) {
-    result.innerText = "You Won!";
-    result.style.color = isDark ? "#00ff00" : "#0B642C";
-  } else if (userLose) {
-    result.innerText = "You Lose";
-    result.style.color = isDark ? "#ff0000" : "#6c1111";
-  }
-  result.style.backgroundColor = isDark ? "#2b2b34" : "#f9eccc";
-};
-
-const toggleBtn = document.getElementById("toggleBtn");
-
-toggleBtn.addEventListener("click", function () {
-  this.classList.toggle("active");
-  this.textContent = this.classList.contains("active")
-    ? "DARK MODE"
-    : "LIGHT MODE";
-
-  document.body.classList.toggle("dark-theme");
-});
