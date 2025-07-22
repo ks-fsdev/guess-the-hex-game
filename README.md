@@ -91,7 +91,7 @@
   <li>Theme (Light/Dark) can be toggled and is synced across the entire app using <code>localStorage</code> and shared JavaScript.</li>
 </ul>
 
-<h2>😨 What I Learned</h2>
+<h2>What I Learned</h2>
 <ul>
   <li>DOM manipulation and event-driven logic using JavaScript</li>
   <li>Creating responsive UI layouts with CSS Flexbox</li>
